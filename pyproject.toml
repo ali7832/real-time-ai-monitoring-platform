@@ -1,0 +1,23 @@
+[project]
+name = "real-time-ai-monitoring-platform"
+version = "0.1.0"
+description = "Production-ready real-time AI monitoring platform"
+requires-python = ">=3.10"
+dependencies = ["fastapi", "uvicorn[standard]", "pydantic", "typer", "rich"]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "ruff"]
+
+[project.scripts]
+aimon = "ai_monitoring.cli:app"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
