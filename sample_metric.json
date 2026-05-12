@@ -1,0 +1,8 @@
+{
+  "service_name": "rag-api",
+  "latency_ms": 850,
+  "error_rate": 0.01,
+  "throughput_rpm": 120,
+  "cost_usd": 0.02,
+  "drift_score": 0.05
+}
