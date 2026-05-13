@@ -1,19 +1,24 @@
 # Real-Time AI Monitoring Platform
 
-Production-ready monitoring platform for AI/ML services, covering latency, error rate, throughput, model drift signals, cost, and service health.
+Deployable AI operations monitoring platform for ingesting service telemetry, calculating health scores, generating alerts, creating incident IDs, and returning recommended operational actions.
 
-## Features
+## Core Capabilities
 
-- AI service metric ingestion
-- Health scoring engine for latency, errors, cost, and drift
+- AI service metric ingestion API
+- Health scoring for latency, error rate, throughput, cost, and drift
 - Alert rule evaluation
-- FastAPI monitoring API
+- Incident ID generation for degraded and critical states
+- Recommended action guidance for operators
+- JSONL metric event stream for local demo mode
+- JSONL incident stream for local incident review
+- Service version, environment, and region metadata
+- FastAPI `/metrics` endpoint
 - CLI workflows for demo and metric submission
-- JSONL metric event storage
+- Runtime configuration through environment variables
 - Docker and Docker Compose deployment
 - GitHub Actions CI
-- Pytest test suite
-- Architecture and deployment documentation
+- Pytest coverage
+- Operations runbook and architecture decision record
 
 ## Quickstart
 
@@ -39,14 +44,24 @@ curl -X POST http://localhost:8000/metrics \
 docker-compose up --build
 ```
 
-## Docs
+## Runtime Configuration
+
+See `.env.example` for monitor version, metric store path, incident store path, and health threshold settings.
+
+## Documentation
 
 - `ARCHITECTURE.md`
 - `DEPLOYMENT.md`
+- `OPERATIONS.md`
+- `docs/adr-001-health-scoring-and-incidents.md`
 - `sample_metric.json`
 
-## Portfolio Highlights
+## Production Roadmap
 
-- Demonstrates AI platform engineering and production monitoring
-- Useful for LLM, RAG, ML model APIs, and agent systems
-- Strong foundation for Prometheus/Grafana, alerting, SLOs, model drift monitoring, and AI service reliability engineering
+- Prometheus metrics export
+- Grafana dashboards
+- PagerDuty or Slack incident routing
+- SLO and error budget tracking
+- Model drift dashboards
+- Multi-service fleet views
+- Kubernetes deployment and autoscaling
