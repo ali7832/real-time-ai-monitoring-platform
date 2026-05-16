@@ -1,6 +1,6 @@
 # Real-Time AI Monitoring Platform
 
-Deployable AI operations monitoring platform for ingesting service telemetry, calculating health scores, generating alerts, creating incident IDs, and returning recommended operational actions.
+Deployable AI operations monitoring platform for ingesting service telemetry, calculating health scores, generating alerts, creating incident IDs, and returning recommended operational actions, with a premium React AIOps monitoring cockpit.
 
 ## Core Capabilities
 
@@ -19,6 +19,7 @@ Deployable AI operations monitoring platform for ingesting service telemetry, ca
 - GitHub Actions CI
 - Pytest coverage
 - Operations runbook and architecture decision record
+- Multi-page React/Vite AIOps monitoring frontend
 
 ## Quickstart
 
@@ -28,6 +29,30 @@ aimon demo
 uvicorn ai_monitoring.api:app --reload
 pytest -q
 ```
+
+## Frontend AIOps Monitor Dashboard
+
+The `frontend/` directory contains a premium React/Vite command center for monitoring AI services in production.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`.
+
+Frontend pages:
+
+- Overview: fleet health KPIs, service status table, and health trend charts
+- Metric Lab: interactive telemetry submission and health-score evaluation
+- Incidents: incident response queue with severity and recommended actions
+- Drift Center: model drift trend analysis and operational response guidance
+- Cost & Latency: latency profile and AI cost-control insights
+- SLOs: SLO scorecard, error budget policy, and release guardrails
+- Playbooks: operational playbooks for latency, drift, and cost anomalies
+
+The UI attempts to call `/metrics` and falls back to demo monitoring intelligence when the backend is offline.
 
 ## API
 
