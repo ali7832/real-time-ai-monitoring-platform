@@ -2,6 +2,12 @@
 
 Deployable AI operations monitoring platform for ingesting service telemetry, calculating health scores, generating alerts, creating incident IDs, and returning recommended operational actions, with a premium React AIOps monitoring cockpit.
 
+## Product Demo Video
+
+
+https://github.com/user-attachments/assets/fda2345a-90f6-424c-bb87-da8d01ea523f
+
+
 ## Core Capabilities
 
 - AI service metric ingestion API
